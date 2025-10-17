@@ -14,27 +14,44 @@ public class City implements Comparable {
     }
 
     /**
-     * This returns the city attribute
+     * This returns the name of the city
      * @return      city name
      */
-    String getCityName() {
+    public String getCityName() {
         return this.city;
     }
 
     /**
-     * This returns the province attribute
+     * This returns the name of the province
      * @return      province name
      */
-    String getProvinceName() {
+    public String getProvinceName() {
         return this.province;
     }
 
+    /**
+     * Compares this city to another city for ordering.
+     * Cities are ordered lexicographically by their city names.
+     *
+     * @param o         the object to compare to
+     * @return          a negative integer, zero, or a positive integer as this city's name
+     *                  is lexicographically less than, equal to, or greater than the specified city's name
+     * @throws ClassCastException       if the specified object is not a {@link City}
+     */
     @Override
     public int compareTo(Object o) {
         City city = (City) o;
         return this.getCityName().compareTo(city.getCityName());
     }
 
+    /**
+     * Determines whether this city is equal to another object.
+     * Two cities are considered equal if both their city names and province names are the same.
+     *
+     * @param o         the object to compare with this city
+     * @return          true if the specified object is a {@link City} with the same city
+     *                  and province names as this one; false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
